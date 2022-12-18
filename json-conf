@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+### vars
+##
+_jqRoot="."
+##
+_jsonPath="${jsonPath:=NULL}"
+##
+_jsonFile="${jsonFile:=NULL}"
+
+
+
+### checkParams()
+##
+checkParams() {
+  [[ ${_jsonPath} == "NULL" || ${_jsonFile} == "NULL" ]] && {
+    printf "/usage/ <jsonPath=jq style path> <jsonFile=some-file.conf.json> `basename ${0}` ..\n"
+    exit 1
+    }
+  }
+
+
+
+###
+checkParams
+
+jq -r "${_jqRoot}${_jsonPath}" ${_jsonFile}
