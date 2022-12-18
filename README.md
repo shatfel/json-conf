@@ -3,7 +3,7 @@
 ## Install
 
 1. Clone repo.
-2. Install jq from your distro.
+2. Install `jq` from your distro.
 
 ## Usage
 
